@@ -24,13 +24,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors());
-app.use((req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Origin','https://tiers-backend-task1.netlify.app');
-    res.setHeader('Access-Control-Allow-Methods','GET','POST','DELETE','PUT');
-    res.setHeader('Access-Control-Allow-Headers','Content-Types');
-    next();
-})
+app.use(cors({
+  origin: 'https://tiers-backend-task1.netlify.app',
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  allowedHeaders: ['Content-Type']
+}));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
