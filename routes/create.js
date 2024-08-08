@@ -34,7 +34,7 @@ router.post('/', upload.single("file"), (req, res) => {
      if(err) throw err;
      else {
         console.log("data store");
-        res.redirect('http://localhost:3000')
+        res.redirect('https://tiers-backend-task1.netlify.app')
      }
   })
  
