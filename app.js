@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors({
-  origin: 'https://tiers-backend-task1-mgbiftlsg-takhlees-projects.vercel.app',
+  origin: 'https://tiers-backend-task1.vercel.app',
   methods: ['GET', 'POST', 'DELETE', 'PUT'],
   allowedHeaders: ['Content-Type']
 }));
